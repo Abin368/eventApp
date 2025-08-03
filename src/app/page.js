@@ -1,7 +1,12 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-3xl font-bold">Welcome to Tier Showcase App</h1>
-    </main>
-  );
+import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
+
+export default function HomePage() {
+  const { userId } = auth();
+
+  if (!userId) {
+    redirect('/sign-in');
+  }
+
+  return <div>Welcome to the homepage!</div>;
 }

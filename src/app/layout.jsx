@@ -1,12 +1,13 @@
+// app/layout.jsx
+import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
-import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Tier Showcase',
-  description: 'Tier-based event showcase using Clerk and Supabase',
+  title: 'Tier-Based Event Showcase',
+  description: 'Show events based on user tiers',
 };
 
 export default function RootLayout({ children }) {
